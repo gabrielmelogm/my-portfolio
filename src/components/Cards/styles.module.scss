@@ -1,0 +1,115 @@
+@import "/styles/theme.scss"; 
+
+.SkillsContent {
+  width: 350px;
+  height: auto;
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-start;
+  background-color: $bg-cards;
+
+  .ListSkills {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 95%;
+    list-style: none;
+    font-family: $main-font;
+    font-weight: 400;
+    font-size: 14px;
+    color: $text-color;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .ItemSkills {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 15px;
+
+      .Icon {
+        border-color: $text-color;
+      }
+
+    }
+
+  }
+
+}
+
+.contentTechnologies {
+  width: 350px;
+  height: auto;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: $bg-cards;
+
+  .Title {
+    margin-left: 35px;
+    color: $text-color;
+    font-family: $main-font;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .contentList {
+    margin-bottom: 25px;
+
+    .List {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 15px 0px;
+  
+      .contentCard {
+        width: 85px;
+        height: 25px;
+        border-radius: 30px;
+        background-color: $bg-techs;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+  
+        .techText {
+          font-size: 10px;
+          font-family: $main-font;
+          font-weight: 700;
+          color: #000000;
+        }
+  
+      }
+  
+    }
+    
+  }
+
+}
+
+@media(max-width: '500px') {
+  .SkillsContent {
+    width: 100%;
+  }
+  .contentTechnologies {
+    width: 100%;
+    
+    .contentList {
+      .List {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 15px 15px;
+        padding: 0;
+        margin-left: 15px;
+        
+        .contentCard {
+          width: 130px;
+          height: 30px;
+          
+          .techText {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

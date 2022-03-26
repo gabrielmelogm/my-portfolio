@@ -1,0 +1,109 @@
+@import "/styles/theme.scss";
+
+.List {
+  margin-top: 30px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px 30px;
+
+  
+  .ListItem {
+    height: 185px;
+    border-radius: 20px;
+    background-color: $bg-cards;
+    position: relative;
+    
+    &:hover {
+      transition: transform 300ms, background-color 300ms;
+      animation: pulse 500ms;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+      animation: none;
+    }
+    
+    @keyframes pulse {
+      from {
+        box-shadow: $bg-techs 0 0 0;
+      }
+      to {
+        box-shadow: #a76a8b 0 0 22px;
+      }
+    }
+
+    .titleRepositories {
+      margin-top: 30px;
+      margin-left: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      color: $text-color;
+
+      .nameRepositorie {
+        font-family: $main-font;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+    }
+
+    .Description {
+      margin-left: 30px;
+      margin-top: 20px;
+      font-family: $main-font;
+      font-size: 14px;
+      color: $text-color;
+    }
+
+    .ContentInfo {
+      position: absolute;
+      margin-left: 30px;
+      bottom: 20px;
+      color: $text-color;
+      display: flex;
+      align-items: center;
+      width: -webkit-fill-available;
+      justify-content: space-between;
+
+      .ContentInfoFirst {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        font-family: $main-font;
+      }
+
+      .ContentItems {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+        font-size: 14px;
+      }
+
+      .ContentLanguage {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: $main-font;
+        font-size: 14px;
+        margin-right: 30px;
+      }
+
+    }
+
+  }
+}
+
+@media (max-width: '500px') {
+  .List {
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    grid-gap: 15px 30px;
+    padding: 0;
+    margin-left: 30px;
+  }
+}
